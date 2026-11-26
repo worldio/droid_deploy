@@ -1,0 +1,160 @@
+{
+  "port": 50051,
+  "tick_s": 0.066,
+  "task_horizon": 500,
+  "idle_timeout_s": 600,
+  "log_dir": "out/serve",
+  "embodiment": "droid",
+  "start_pose_deg": [
+    0,
+    -45,
+    0,
+    -135,
+    0,
+    90,
+    0
+  ],
+  "reset_gripper": 0.00296,
+  "node_graph": {
+    "axis_length": 0.07,
+    "nodes": [
+      {
+        "name": "link1",
+        "joint": "fr3_joint1"
+      },
+      {
+        "name": "link2",
+        "joint": "fr3_joint2"
+      },
+      {
+        "name": "link3",
+        "joint": "fr3_joint3"
+      },
+      {
+        "name": "link4",
+        "joint": "fr3_joint4"
+      },
+      {
+        "name": "link5",
+        "joint": "fr3_joint5"
+      },
+      {
+        "name": "link6",
+        "joint": "fr3_joint6"
+      },
+      {
+        "name": "link7",
+        "joint": "fr3_joint7"
+      },
+      {
+        "name": "gripper/right_driver",
+        "joint": "gripper/right_driver_joint",
+        "axis": [
+          0,
+          0,
+          -1
+        ]
+      },
+      {
+        "name": "gripper/left_driver",
+        "joint": "gripper/left_driver_joint",
+        "axis": [
+          0,
+          0,
+          -1
+        ]
+      },
+      {
+        "name": "gripper/tcp_frame",
+        "body": "gripper/base",
+        "tcp": true,
+        "site_position": [
+          0,
+          0,
+          0.1733
+        ],
+        "site_rotation": [
+          [
+            -1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            -1
+          ]
+        ]
+      },
+      {
+        "name": "gripper/right_coupler",
+        "body": "gripper/right_coupler",
+        "point": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "gripper/left_coupler",
+        "body": "gripper/left_coupler",
+        "point": [
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "edges": [
+      [
+        "link1",
+        "link2"
+      ],
+      [
+        "link2",
+        "link3"
+      ],
+      [
+        "link3",
+        "link4"
+      ],
+      [
+        "link4",
+        "link5"
+      ],
+      [
+        "link5",
+        "link6"
+      ],
+      [
+        "link6",
+        "link7"
+      ],
+      [
+        "link7",
+        "gripper/right_driver"
+      ],
+      [
+        "link7",
+        "gripper/left_driver"
+      ],
+      [
+        "link7",
+        "gripper/tcp_frame"
+      ],
+      [
+        "gripper/right_driver",
+        "gripper/right_coupler"
+      ],
+      [
+        "gripper/left_driver",
+        "gripper/left_coupler"
+      ]
+    ]
+  }
+}
